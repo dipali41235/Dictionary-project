@@ -3,22 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dictionary App</title>
+    <title>Dictionary - Word Lookup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Dictionary Lookup</h1>
-        <div class="search-box">
-            <input type="text" id="wordInput" placeholder="Enter a word...">
-            <button id="searchBtn">Search</button>
+    <div class="header">
+        <h1>Dictionary</h1>
+        <p>Discover meanings, expand your vocabulary</p>
+    </div>
+
+    <div class="main-container">
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="wordInput" placeholder="Enter a word to search..." autocomplete="off">
+                <button class="search-btn" id="searchBtn">
+                    <span class="material-icons">search</span>
+                    Search
+                </button>
+            </div>
         </div>
-        <div id="result" class="result-card hidden">
-            <p><strong>Word:</strong> <span id="word"></span></p>
-            <p><strong>Definition:</strong> <span id="definition"></span></p>
-            <p><strong>Valid:</strong> <span id="valid"></span></p>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Looking up word...</p>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            <span class="material-icons">error_outline</span>
+            <span id="errorText">Word not found. Please try another word.</span>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <span class="material-icons">menu_book</span>
+            <h3>Welcome to Dictionary</h3>
+            <p>Enter a word above to get started with your search</p>
+        </div>
+
+        <div class="result-section" id="resultSection">
+            <div class="word-header">
+                <h2 class="word-title" id="wordTitle"></h2>
+                <div class="word-actions">
+                    <button class="action-btn" id="copyBtn" title="Copy word">
+                        <span class="material-icons">content_copy</span>
+                    </button>
+                    <button class="action-btn" id="speakBtn" title="Speak word">
+                        <span class="material-icons">volume_up</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="definition-card">
+                <div class="definition-label">Definition</div>
+                <div class="definition-text" id="definitionText"></div>
+                <div class="validity-badge" id="validityBadge"></div>
+            </div>
+        </div>
+
+        <div class="recent-searches" id="recentSearches">
+            <h3>Recent Searches</h3>
+            <div class="recent-list" id="recentList"></div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
