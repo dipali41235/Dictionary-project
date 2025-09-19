@@ -152,7 +152,7 @@ class DictionaryApp {
             }
 
             showToast(message) {
-                // Simple toast 
+                // Simple  
                 const toast = document.createElement('div');
                 toast.style.cssText = `
                     position: fixed;
