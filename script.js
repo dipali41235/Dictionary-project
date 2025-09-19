@@ -181,7 +181,7 @@ class DictionaryApp {
             new DictionaryApp();
         });
 
-        // Add slideUp animation
+        // Add slideUp 
         const style = document.createElement('style');
         style.textContent = `
             @keyframes slideUp {
