@@ -176,7 +176,7 @@ class DictionaryApp {
             }
         }
 
-        // Initialize the app when 
+        // Initialize the app 
         document.addEventListener('DOMContentLoaded', () => {
             new DictionaryApp();
         });
